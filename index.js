@@ -6,6 +6,7 @@ const teamsRouter = require('./router/teamRoute');
 require('dotenv').config(); 
 
 const mongoURI = process.env.MONGO_URL;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
@@ -25,4 +26,4 @@ app.get('/',(req,res)=> {
 app.use('/tips', tipsRouter);
 app.use('/teams', teamsRouter);
 
-app.listen(3000, () => console.log('Server Started'));
+app.listen(PORT, () => console.log('Server Started'));

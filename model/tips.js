@@ -35,6 +35,11 @@ const tipSchema = new mongoose.Schema({
       type: String,
       required: true
     },
+    score: {
+      type: String,
+      required: true,
+      default: "0 : 0"
+    },
     date: {
       type: String,
       required: true

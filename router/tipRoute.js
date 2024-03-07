@@ -73,6 +73,7 @@ router.patch('/:id', async (req, res) => {
     const updatedTip = await Tip.findByIdAndUpdate(
       req.params.id,
       { isCorrect: req.body.isCorrect,
+        score: req.body.score,
         finish: true
       },
       { new: true }

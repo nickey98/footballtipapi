@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const League = require('../model/league');
-const ApiResponse = require('../utils/ApiResponse'); // Adjust path as needed
+const ApiResponse = require('../utils/apiResponse.js'); // Adjust path as needed
 
 // Create a new league
 router.post('/create', async (req, res) => {

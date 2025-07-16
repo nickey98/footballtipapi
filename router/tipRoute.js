@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Tip = require('../model/tips');
 const League = require('../model/league');
-const ApiResponse = require('../utils/ApiResponse'); // adjust path if needed
+const ApiResponse = require('../utils/apiResponse.js'); // adjust path if needed
 
 // GET finished tips
 router.get('/finish', async (req, res) => {

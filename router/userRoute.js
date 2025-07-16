@@ -5,7 +5,7 @@ const User = require('../model/user');
 const router = express.Router();
 require('dotenv').config();
 const authMiddleware = require('../middleware/authMiddleware');
-const ApiResponse = require('../utils/ApiResponse'); // adjust path as needed
+const ApiResponse = require('../utils/apiResponse.js'); // adjust path as needed
 
 const SECRET_KEY = process.env.SECRET_KEY;
 

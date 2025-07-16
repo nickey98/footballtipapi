@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Predict = require('../models/Predict');
-const ApiResponse = require('../utils/ApiResponse'); // adjust path if needed
+const ApiResponse = require('../utils/apiResponse.js'); // adjust path if needed
 
 // Create a new prediction
 router.post('/', async (req, res) => {

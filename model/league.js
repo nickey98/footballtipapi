@@ -1,22 +1,17 @@
 const mongoose = require('mongoose');
 
-const teamSchema = new mongoose.Schema({
+const leagueSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true
     },
-    league: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'League', // Reference to the League model
-    required: true
-  },
     createdAt: {
       type: Date,
       default: Date.now
     }
   });
 
-  teamSchema.set('toJSON', {
+  leagueSchema.set('toJSON', {
   transform: (doc, ret) => {
     ret.id = ret._id;
     delete ret._id;
@@ -26,6 +21,6 @@ const teamSchema = new mongoose.Schema({
   }
 });
   
-  const Team = mongoose.model('Team', teamSchema);
+  const League = mongoose.model('League', leagueSchema);
   
-  module.exports = Team;
+  module.exports = League;

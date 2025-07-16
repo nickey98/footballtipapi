@@ -11,13 +11,12 @@ const tipSchema = new mongoose.Schema({
         ref: 'Team',
         required: true
     },
+    league: { type: mongoose.Schema.Types.ObjectId, 
+      ref: 'League' 
+    },
     finish:{
       type: Boolean,
       default: false
-    },
-    league: {
-      type: String,
-      required: true
     },
     round: {
       type: String,
@@ -49,6 +48,16 @@ const tipSchema = new mongoose.Schema({
       default: Date.now
     }
   });
+
+    tipSchema.set('toJSON', {
+  transform: (doc, ret) => {
+    ret.id = ret._id;
+    delete ret._id;
+    delete ret.__v;
+    delete ret.createdAt;
+    return ret;
+  }
+});
   
   const Tip = mongoose.model('Tip', tipSchema);
   

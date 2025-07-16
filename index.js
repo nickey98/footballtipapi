@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const app = express();
 const tipsRouter = require('./router/tipRoute');
 const teamsRouter = require('./router/teamRoute');
+const leagueRouter = require('./router/leagueRoute');
+const userRouter = require('./router/userRoute');
 require('dotenv').config(); 
 
 const mongoURI = process.env.MONGO_URL;
@@ -20,10 +22,12 @@ app.use(express.json());
 
 app.get('/',(req,res)=> {
     res.json("I'm currently available....")
-})
+});
 
 // Routes
 app.use('/tips', tipsRouter);
 app.use('/teams', teamsRouter);
+app.use('/league', leagueRouter);
+app.use('/user', userRouter);
 
 app.listen(PORT, () => console.log('Server Started'));
